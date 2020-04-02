@@ -69,10 +69,8 @@ public class Controller implements Initializable {
         activateCanvas();
         timeline = new Timeline();
         timeline.setOnFinished(event -> {
-            System.err.println("done");
             timeline.stop();
             timeline.getKeyFrames().clear();
-            /*timeline = new Timeline();*/
         });
     }
 
@@ -84,7 +82,6 @@ public class Controller implements Initializable {
             } else
                 timeline.setCycleCount(1);
             timeline.play();
-
             canvas.setOnMouseClicked(event1 -> {
             });
         });
@@ -137,8 +134,6 @@ public class Controller implements Initializable {
         canvas.setOnMouseClicked(event -> {
             int x = (int) event.getX();
             int y = (int) event.getY();
-            widthTextField.setText(x + "");
-            heightTextField.setText(y + "");
             painter.repaintCellFromClickedPixel(currentGrid, x, y);
         });
     }

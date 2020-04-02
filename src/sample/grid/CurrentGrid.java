@@ -40,11 +40,9 @@ public class CurrentGrid {
                 newGrid[i][j] = grid[i][j];
             }
         }
-        print();
         this.height = newHeight;
         this.width = newWidth;
         this.grid = newGrid;
-        print();
     }
 
     private int[][] initiateGrid(int height, int width) {

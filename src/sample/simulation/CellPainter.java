@@ -22,6 +22,8 @@ public class CellPainter {
         int jStartPixel = j - jResidue;
         int y = iStartPixel / currentGrid.getScale();
         int x = jStartPixel / currentGrid.getScale();
+        if (x >= currentGrid.getGrid().length || y >= currentGrid.getGrid()[0].length)
+            return;
         currentGrid.reverseCell(x, y);
         int value = currentGrid.getCell(x, y);
         paintCell(iStartPixel, jStartPixel, value);
